@@ -6,4 +6,6 @@ include_directories(include)
 
 add_executable(${PROJECT_NAME}
     src/main.cpp
+    src/node.cpp
+    src/maze.cpp
 )
