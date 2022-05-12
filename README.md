@@ -9,7 +9,9 @@
     Plane containing Nodes as the smallest unit in numbers of rows and columns.
 
 ### Maze Generator
-    Before A* algorithm is used to find the shortest path between two points in the Grid, maze generator is used to make the Grid into a maze where some nodes are open(walkable) while some are closed(not walkable)
+    Before A* algorithm is used to find the shortest path between two points in the Grid,
+    maze generator is used to make the Grid into a maze where some nodes are open(walkable)
+    while some are closed(not walkable)
 
 #### **How does it work?**
 Maze generator initializes start current and next variable to store
