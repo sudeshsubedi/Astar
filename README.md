@@ -28,3 +28,5 @@
 
 ####     **Note**:
     This method creates maze such that only single path is available between any two nodes.
+
+![Mage generation gif](https://drive.google.com/file/d/19y7ncyo0onTXf_dpUVatj_SjJ0J0UTYA/view?usp=sharing)
