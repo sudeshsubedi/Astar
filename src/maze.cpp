@@ -1,6 +1,6 @@
 #include "maze.h"
 
-void Maze::generate_maze(int sd) {
+void Maze::generate_maze(int sd, bool display_process) {
     seed = sd;
     visited.push_back(start);
     while(visited.size() > 0) {
@@ -13,6 +13,10 @@ void Maze::generate_maze(int sd) {
             visited.pop_back();
         } else {
             visited.push_back(next);
+        }
+        if(display_process) {
+            display_maze();
+            std::this_thread::sleep_for(std::chrono::milliseconds(20));
         }
     }
 }
@@ -61,11 +65,16 @@ Node* Maze::get_neighbor(Node* curr_node) {
 }
 
 void Maze::display_maze() {
+    system("clear");
+    std::cout << CLEAR;
+    for(int k=0; k<=WIDTH; k++) std::cout << BG_RED << "__" << RESET;
+    std::cout << '\n';
     for(int j=0; j<HEIGHT; j++) {
         for(int i=0; i<WIDTH; i++) {
             if( (start + j*WIDTH + i)->get_visited() ) std::cout << BG_GREEN << "  " << RESET;
             else std::cout << BG_WHITE << "  " << RESET;
         }
+        std::cout << BG_RED << "||" << RESET;
         std::cout << '\n';
     }
 }

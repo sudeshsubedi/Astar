@@ -12,7 +12,7 @@ int main() {
     }
 
     Maze maze(grid[0]);
-    maze.generate_maze(time(NULL) % 1000);
+    maze.generate_maze(234, true);
     maze.display_maze();
     return 0;
 }
