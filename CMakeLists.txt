@@ -8,4 +8,5 @@ add_executable(${PROJECT_NAME}
     src/main.cpp
     src/node.cpp
     src/maze.cpp
+    src/astar.cpp
 )

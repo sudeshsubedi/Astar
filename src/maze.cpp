@@ -6,17 +6,19 @@ void Maze::generate_maze(int sd, bool display_process) {
     while(visited.size() > 0) {
         current = visited.at(visited.size() - 1);
         current->set_visited(true);
+        current->set_status(DEFAULT);
         // std::cout << "test: (" << current->get_row() << ", " << current->get_col() << ")\n";
         next = get_neighbor(current);
 
         if(!has_neighbor) {
             visited.pop_back();
+            continue;
         } else {
             visited.push_back(next);
         }
         if(display_process) {
             display_maze();
-            std::this_thread::sleep_for(std::chrono::milliseconds(20));
+            std::this_thread::sleep_for(std::chrono::milliseconds(5));
         }
     }
 }
@@ -55,8 +57,10 @@ Node* Maze::get_neighbor(Node* curr_node) {
         //next = neighbors.at(0);
         if(curr_node->get_row() == next->get_row()) {
             (curr_node - (curr_node->get_col() / 2 - next->get_col() / 2) )->set_visited(true);
+            (curr_node - (curr_node->get_col() / 2 - next->get_col() / 2) )->set_status(DEFAULT);
         } else {
             (curr_node - (curr_node->get_row() / 2 - next->get_row() / 2) * WIDTH )->set_visited(true);
+            (curr_node - (curr_node->get_row() / 2 - next->get_row() / 2) * WIDTH )->set_status(DEFAULT);
         }
         return next;
     }
