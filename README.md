@@ -64,4 +64,4 @@ while open_list is not empty
             add neighbor to open_list
 ```
 
-![](https://i.imgur.com/oYoXF8a.gifv)
+![](https://i.imgur.com/oYoXF8a.gif)
