@@ -1,4 +1,4 @@
-#include "astar.h"
+#include "../include/astar.h"
 
 void Astar::find_path(Node* s, Node* e, bool show_process) {
     start = s;

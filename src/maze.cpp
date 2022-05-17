@@ -1,4 +1,4 @@
-#include "maze.h"
+#include "../include/maze.h"
 
 void Maze::generate_maze(int sd, bool display_process) {
     seed = sd;

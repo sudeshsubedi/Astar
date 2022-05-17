@@ -1,4 +1,4 @@
-#include "node.h"
+#include "../include/node.h"
 
 void Node::set_position(int y, int x) {
     row = y;

@@ -1,8 +1,8 @@
 #include <iostream>
-#include "constants.h"
-#include "node.h"
-#include "maze.h"
-#include "astar.h"
+#include "../include/constants.h"
+#include "../include/node.h"
+#include "../include/maze.h"
+#include "../include/astar.h"
 
 void display(Node*);
 
