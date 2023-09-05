@@ -135,3 +135,46 @@ void Astar::display(Node* start) {
     }
     std::this_thread::sleep_for(std::chrono::milliseconds(5));
 }
+
+int Astar::print(Node* start, std::string filename) {
+    std::ofstream outf(filename);
+    if (!outf.is_open()) {
+        std::cerr << "Failed to open file: " << filename << std::endl;
+        return 1;
+    }
+    outf << CLEAR;
+    for(int k=0; k<=WIDTH; k++) outf << BG_RED << "__" << RESET;
+    outf << '\n';
+    for(int j=0; j<HEIGHT; j++) {
+        for(int i=0; i<WIDTH; i++) {
+            Status stat = (start + j*WIDTH + i)->get_status();
+            switch (stat)
+            {
+            case WALL:
+                outf << BG_BLACK << "  " << RESET;
+                break;
+            case DEFAULT:
+                outf << BG_GREEN << "  " << RESET;
+                break;
+            case START:
+                outf << BG_YELLOW << "  " << RESET;
+                break;
+            case END:
+                outf << BG_MAGENTA << "  " << RESET;
+                break;
+            case PATH:                                                                                                                                              
+                outf << BG_PATH << "  " << RESET;
+                break;
+            case CLOSED:
+                outf << BG_CLOSED << "  " << RESET;
+                break;
+            default:
+                outf << BG_GREEN << "  " << RESET;
+                break;
+            }
+        }
+        outf << BG_RED << "||" << RESET;
+        outf << '\n';
+    }
+    std::this_thread::sleep_for(std::chrono::milliseconds(5));
+}

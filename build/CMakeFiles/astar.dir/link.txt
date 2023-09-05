@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/astar.dir/src/main.cpp.o CMakeFiles/astar.dir/src/node.cpp.o CMakeFiles/astar.dir/src/maze.cpp.o CMakeFiles/astar.dir/src/astar.cpp.o -o astar 

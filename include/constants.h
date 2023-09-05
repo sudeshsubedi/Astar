@@ -1,7 +1,7 @@
 #pragma once
 
-#define HEIGHT 35 // 35 // in the form of 2 * n - 1
-#define WIDTH 71 // 71 // in the form of 2 * n - 1
+#define HEIGHT 15 // 35 // in the form of 2 * n - 1
+#define WIDTH 41 // 71 // in the form of 2 * n - 1
 
 
 #define RESET "\033[0m"

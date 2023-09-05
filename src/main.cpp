@@ -19,6 +19,7 @@ int main() {
     //maze.display_maze();
     Astar a;
     a.find_path(grid[0], &grid[HEIGHT-1][WIDTH-1], true);
+    a.print(grid[0], "output.txt");
     //display(grid[0]);
     // for(auto& node: a.get_path()) {
     //     std::cout << "(" << node->get_row() << ", " << node->get_col() << ")\t";
